@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Creative Work of Clay Ewing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/addons/p5.dom.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Work+Sans:300" rel="stylesheet">
+    <style>
+
+    h3 {
+      font-size: 45px;
+    }
+
+    h4 {
+      font-size: 32px;
+    }
+    .title {
+      font-family: 'Work Sans', Sans-Serif;
+    }
+
+    .project .title {
+      text-align: center;
+      padding-top: 40px;
+      font-weight: bold;
+      font-size: 1em;
+    }
+
+    .project:hover {
+      border: 10px solid black;
+      height: 100%;
+    }
+    .project-description {
+      margin-bottom: 20px;
+    }
+
+    .fullwidth-video {
+      overflow:hidden;
+      padding-bottom:62.25%;
+      position:relative;
+      height:0;    
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .fullwidth-video iframe, .fullwidth-video object, .fullwidth-video embed {
+      left:0;
+      top:0;
+      height:100%;
+      width:100%;
+      position:absolute;
+    }
+
+    p {
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    body {
+      font-family: 'Open Sans', Sans-Serif;
+    }
+    </style>
+
+
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-one-quarter">
+          <div id="logo"> 
+              <div id="logo-canvas">
+              </div>              
+          </div>
+          <aside class="menu" id="projects">
+            <p class="menu-label">
+              Games
+            </p>
+            <ul class="menu-list">
+              <li><a href="#eradicate">Eradicate!</a></li>
+              <li><a href="#dreamy">Dreamy</a></li>
+              <li><a href="#dongreycafe">Don Grey Cafe</a></li>
+              <li><a href="#unsavory">Unsavory</a></li>
+              <li><a href="#atlantis">Atlantis</a></li>
+              <li><a href="#zoorush">Zoo Rush</a></li>
+              <li><a href="#vanity">Vanity</a></li>
+              <li><a href="#tasaf">Uwezeshaji Kaya Kuhimili</a></li>
+              <li><a href="#hvm">Humans vs. Mosquitoes</a></li>
+              <li><a href="#bumpin">Bumpin'</a></li>
+              <li><a href="#adpatrol">Ad Patrol</a></li>
+              <li><a href="#sweatshop">Sweatshop Superstar</a></li>
+              <li><a href="#hhc">Hustling Health Care</a></li>    
+            </ul>
+
+            <p class="menu-label">
+              Web and Mobile
+            </p>
+
+            <ul class="menu-list">
+              <li><a href="#per">Personal Exposure Reporter</a></li>
+              <li><a href="#scan360">SCAN 360</a></li>
+              <li><a href="#queso">Queso</a></li>
+              <li><a href="#rocunited">ROC United Diners Guide App</a></li>
+            </ul>
+
+            <p class="menu-label">
+              Installations
+            </p>
+
+            <ul class="menu-list">
+              <li><a href="#easel">Lowe Easel</a></li>
+              <li><a href="#candidreflection">Candid Reflection</a></li>
+            </ul>
+
+            <p class="menu-label">
+              Rapid Prototypes
+            </p>
+            <ul class="menu-list">
+              <li><a href="#climateanxiety">Climate Anxiety</a></li>
+              <li><a href="#candyphotobomb">Candy Photo Bomb</a></li>
+              <li><a href="#iquest">IQUEST</a></li>
+              <li><a href="#keepyouredge">Keep Your Edge</a></li>
+              <li><a href="#wook">Wook</a></li>
+            </ul>
+            <p class="menu-label">
+              Addons
+            </p>
+
+            <ul class="menu-list">
+              <li><a href="#ofxiPhoneSocial">ofxiPhoneSocial</a></li>
+              <li><a href="#SocialFrameworkPlugin">SocialFrameworkPlugin</a></li>
+              <li><a href="#ofxiPhonePayPal">ofxiPhonePayPal</a></li>
+            </ul>
+
+          </aside>
+        </div>
+        <div class="column is-three-quarters">
+
+          <div class="project-description" id="livingdesegregation" style="display:none;">
+            <h3 class="title">Living Desegregation</h3>
+
+            <p>Lorem ipsum dolor sit amet, te erat quaeque bonorum ius. An modo cetero sit. His zril corrumpit interesset eu. Case diceret abhorreant in vel, mel ullum conceptam ne.</p>
+
+            <p>Vis debet inermis ponderum ad, ei habemus concludaturque nec. Pri dicam percipit deterruisset cu, eum et habeo justo detracto. In modus nostrud voluptaria his, mea no cetero alienum dissentiunt. No duo integre equidem. Usu ei fabellas atomorum interesset.</p>
+
+            <p>Harum simul veniam eos ad. Dolore maluisset voluptatibus est ei, usu tantas graeco volumus ad. Habemus probatus sed te. No quando oblique virtute pro.</p>
+
+            <p>Graece vivendum est id. Et graeco corrumpit liberavisse sit, eius clita pri ei. No sit hinc malis, te vis adhuc tacimates consequat. Eu moderatius signiferumque eum.</p>
+
+            <p>Vix summo delicatissimi ex. Duo ne dolore placerat definitionem. Ex simul meliore scribentur eos, facilis electram cum id, modus ceteros vix et. No fugit omnesque duo.</p>
+
+          </div>          
+
+          <div class="project-description" id="stiltsville" style="display:none;">
+            <h3 class="title">Stiltsille VR</h3>
+            <p>Lorem ipsum dolor sit amet, te erat quaeque bonorum ius. An modo cetero sit. His zril corrumpit interesset eu. Case diceret abhorreant in vel, mel ullum conceptam ne.</p>
+
+            <p>Vis debet inermis ponderum ad, ei habemus concludaturque nec. Pri dicam percipit deterruisset cu, eum et habeo justo detracto. In modus nostrud voluptaria his, mea no cetero alienum dissentiunt. No duo integre equidem. Usu ei fabellas atomorum interesset.</p>
+
+            <p>Harum simul veniam eos ad. Dolore maluisset voluptatibus est ei, usu tantas graeco volumus ad. Habemus probatus sed te. No quando oblique virtute pro.</p>
+
+            <p>Graece vivendum est id. Et graeco corrumpit liberavisse sit, eius clita pri ei. No sit hinc malis, te vis adhuc tacimates consequat. Eu moderatius signiferumque eum.</p>
+
+            <p>Vix summo delicatissimi ex. Duo ne dolore placerat definitionem. Ex simul meliore scribentur eos, facilis electram cum id, modus ceteros vix et. No fugit omnesque duo.</p>    
+          </div>          
+
+          <div class="project-description" id="easel" style="display:none;">
+            <h3 class="title">Spreng Easel</h3>
+            <div class="columns">
+              <div class="column is-three-quarters">
+                <p>Lorem ipsum dolor sit amet, te erat quaeque bonorum ius. An modo cetero sit. His zril corrumpit interesset eu. Case diceret abhorreant in vel, mel ullum conceptam ne.</p>
+
+                <p>Vis debet inermis ponderum ad, ei habemus concludaturque nec. Pri dicam percipit deterruisset cu, eum et habeo justo detracto. In modus nostrud voluptaria his, mea no cetero alienum dissentiunt. No duo integre equidem. Usu ei fabellas atomorum interesset.</p>
+
+                <p>Harum simul veniam eos ad. Dolore maluisset voluptatibus est ei, usu tantas graeco volumus ad. Habemus probatus sed te. No quando oblique virtute pro.</p>
+
+                <p>Graece vivendum est id. Et graeco corrumpit liberavisse sit, eius clita pri ei. No sit hinc malis, te vis adhuc tacimates consequat. Eu moderatius signiferumque eum.</p>
+
+                <p>Vix summo delicatissimi ex. Duo ne dolore placerat definitionem. Ex simul meliore scribentur eos, facilis electram cum id, modus ceteros vix et. No fugit omnesque duo.</p>
+                </div>
+                <div class="column is-one-quarter">
+
+                </div>
+
+            </div>
+            <p></p>
+          </div>          
+
+
+
+
+          <div class="project-description" id="hackathons" style="display:none;">
+            <h3 class="title">Hackathon Projects</h3>
+            <h4>Climate Anxiety / Sensor Based Narratives</h4>
+            <h4>Extreme Candy Photo Bomb Scavenger Memory Saga</h4>
+            <p></p>
+          </div>                 
+
+
+
+          <div class="columns is-multiline">
+
+            <div class="column is-one-fifth">
+              <div class="project" href="#bumpin2">
+                  <div class="is-image is-square"><img src="images/bumpin2-icon.png"/></div>
+                  <div class="title" style="display:none;">Bumpin' 2</div>
+                </div>
+              </div>
+
+            <div class="column is-one-fifth">
+              <div class="project" href="#easel">
+                  <div class="title" style="display:none;">Spreng Easel</div>
+                  <div class="is-image is-square"><img src="https://bulma.io/images/placeholders/256x256.png"/></div>
+                </div>
+              </div>
+
+            <div class="column is-one-fifth">
+              <div class="project" href="#livingdesegregation">
+                  <div class="is-image is-square"><img src="images/livingdesegregation-icon.png"/></div>
+<!--                  <p class="title is-invisible">Living Desegregation</p>-->
+                </div>
+              </div>
+
+            <div class="column is-one-fifth">
+              <div class="project" href="#stiltsville">
+                  <div class="is-image is-square"><img src="images/stiltsville-icon.png"/></div>
+<!--                  <p class="title is-invisible">Stiltsville VR</p>-->
+                </div>
+              </div>
+
+            <div class="column is-one-fifth">
+              <div class="project" href="#per">
+                  <div class="is-image is-square"><img src="images/per-icon.png"/></div>
+                  <div class="title" style="display:none;">Personal Exposure Reporter</div>
+                </div>
+              </div>
+
+            <div class="column is-one-fifth">
+              <div class="project" href="#eradicate">
+                  <div class="is-image is-square"><img src="images/eradicate-icon.png"/></div>
+                  <div class="title" style="display:none;">Eradicate!</div>
+                </div>
+              </div>
+    
+            <div class="column is-one-fifth">
+              <div class="project" href="#scan360">
+                  <div class="is-image is-square"><img src="images/scan360-icon.png"/></div>
+<!--                  <p class="title is-invisible">SCAN 360</p>-->
+                </div>
+              </div>
+
+            <div class="column is-one-fifth">
+              <div class="project" href="#dreamy">
+                  <div class="is-image is-square"><img src="images/dreamy-icon.png"/></div>
+<!--                  <p class="title is-invisible">Dreamy</p>-->
+                </div>
+              </div>
+
+            <div class="column is-one-fifth">
+              <div class="project" href="#dongreycafe">
+                  <div class="is-image is-square"><img src="images/dongrey-icon.png"/></div>
+<!--                  <p class="title is-invisible">Don Grey Cafe</p> -->
+                </div>
+              </div>
+
+            <div class="column is-one-fifth">
+              <div class="project" href="#unsavory">
+                  <div class="is-image is-square"><img src="images/unsavory-icon.png"/></div>
+<!--                  <p class="title is-invisible">Unsavory</p> -->
+                </div>
+              </div>
+
+            <div class="column is-one-fifth">
+              <div class="project" href="#queso">
+                  <div class="is-image is-square"><img src="images/queso-icon.png"/></div>
+<!--                  <p class="title is-invisible">Queso</p>-->
+                </div>
+              </div>
+
+            <div class="column is-one-fifth">
+              <div class="project" href="#atlantis">
+                  <div class="is-image is-square"><img src="images/atlantis-icon.png"/></div>
+<!--                  <p class="title is-invisible">Atlantis</p>-->
+                </div>
+              </div>
+
+            <div class="column is-one-fifth">
+              <div class="project" href="#zoorush">
+                  <div class="is-image is-square"><img src="images/zoorush-icon.png"/></div>
+<!--                  <p class="title is-invisible">Zoo Rush</p>-->
+                </div>
+              </div>
+
+            <div class="column is-one-fifth">
+              <div class="project" href="#rocunited">
+                  <div class="is-image is-square"><img src="images/roc-icon.png"/></div>
+<!--                  <p class="title is-invisible">ROC United Diners Guide</p>-->
+                </div>
+              </div>
+
+            <div class="column is-one-fifth">
+              <div class="project" href="#iquest">
+                  <div class="is-image is-square"><img src="images/iquest-icon.png"/></div>
+<!--                  <p class="title is-invisible">IQUEST</p>-->
+                </div>
+              </div>
+
+            <div class="column is-one-fifth">
+              <div class="project" href="#hackathons">
+                  <div class="is-image is-square"><img src="images/climate-anxiety-icon.jpg"/></div>
+<!--                  <p class="title is-invisible">Climate Anxiety</p>-->
+                </div>
+              </div>
+
+            <div class="column is-one-fifth">
+              <div class="project" href="#keepyouredge">
+                  <div class="is-image is-square"><img src="images/kye-icon.png"/></div>
+<!--                  <p class="title is-invisible">Keep Your Edge</p>-->
+                </div>
+              </div>
+
+
+            <div class="column is-one-fifth">
+              <div class="project" href="#candidreflection">
+                  <div class="is-image is-square"><img src="images/candid-icon.png"/></div>
+<!--                  <p class="title is-invisible">Candid Reflection</p>-->
+                </div>
+              </div>
+
+            <div class="column is-one-fifth">
+              <div class="project" href="#wook">
+                  <div class="is-image is-square"><img src="images/wook-icon.png"/></div>
+<!--                  <p class="title is-invisible">Wook</p>-->
+                </div>
+              </div>
+
+            <div class="column is-one-fifth">
+              <div class="project" href="#vanity">
+                  <div class="is-image is-square"><img src="images/vanity-icon.png"/></div>
+<!--                  <p class="title is-invisible">Vanity</p>-->
+                </div>
+              </div>
+
+            <div class="column is-one-fifth">
+              <div class="project" href="#tasaf">
+                  <div class="is-image is-square"><img src="images/tasaf-icon.png"/></div>
+<!--                  <p class="title is-invisible">Tanzanian Social Action Fund</p> -->
+                </div>
+              </div>
+
+            <div class="column is-one-fifth">
+              <div class="project" href="#hvm">
+                  <div class="is-image is-square"><img src="images/hvm-icon.png"/></div>
+<!--                  <p class="title is-invisible">Humans vs. Mosquitoes</p>-->
+                </div>
+              </div>
+
+            <div class="column is-one-fifth">
+              <div class="project" href="#bumpin">
+                  <div class="is-image is-square"><img src="images/bumpin-icon.png"/></div>
+<!--                  <p class="title is-invisible">Bumpin'</p>-->
+                </div>
+              </div>
+
+            <div class="column is-one-fifth">
+              <div class="project" href="#adpatrol">
+                  <div class="is-image is-square"><img src="images/adpatrol-icon.png"/></div>
+<!--                  <p class="title is-invisible">Ad Patrol</p> -->
+                </div>
+              </div>
+
+            <div class="column is-one-fifth">
+              <div class="project" href="#sweatshop">
+                  <div class="is-image is-square"><img src="images/sweatshop-icon.png"/></div>
+<!--                  <p class="title is-invisible">Sweatshop Superstar</p> -->
+                </div>
+              </div>
+
+
+
+            <div class="column is-one-fifth">
+              <div class="project" href="#hhc">
+                  <div class="is-image is-square"><img src="images/hhc-icon.png"/></div>
+<!--                  <p class="title is-invisible">Hustlin' Health Care</p> -->
+                </div>
+              </div>
+
+          </div>
+        </div>
+        </div>
+    </div>
+  </section>
+  </body>
+<script type="text/javascript" src="logo.js"></script>
+<script>
+$(".slick").slick({
+        dots: true,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear',
+        autoplay: true,
+        autoplaySpeed: 2000,       
+      });
+$( ".project" ).hover(
+    function() {
+      $(this).children('.is-image').hide();
+      $(this).children('.title').show();
+  },
+    function() {
+      $(this).children('.is-image').show();
+      $(this).children('.title').hide();
+  });
+
+$(".project, #projects a").click(
+  function() {
+    $('.project').hide();
+    $('.project-description').hide();
+
+    var projectName = $(this).attr('href');
+    $(projectName).show();
+    $('a').removeClass("is-active");
+    $( "a[href='"+projectName+"']" ).addClass("is-active");
+  });
+</script>
+</html>

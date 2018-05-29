@@ -1,0 +1,54 @@
+    body {
+      font-family: 'Overpass', Sans-Serif;
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
+
+    .title, .subtitle {
+      font-family: 'Permanent Marker', Cursive;
+    }
+
+    .big {
+      font-size: 55px;
+    }
+
+    .pop {
+
+      background-color: #eeeeee;
+      box-shadow: 3px 3px #aaa;
+      margin-right: 30px;
+    }
+
+    .project .title {
+      text-align: center;
+      padding-top: 40px;
+      font-weight: bold;
+      font-size: 1em;
+    }
+
+    .project:hover {
+      border: 10px solid black;
+      height: 100%;
+    }
+    .project-description {
+      margin-bottom: 20px;
+    }
+
+    .fullwidth-video {
+      overflow:hidden;
+      padding-bottom:62.25%;
+      position:relative;
+      height:0;    
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .fullwidth-video iframe, .fullwidth-video object, .fullwidth-video embed {
+      left:0;
+      top:0;
+      height:100%;
+      width:100%;
+      position:absolute;
+    }
