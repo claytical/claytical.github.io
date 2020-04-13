@@ -27,7 +27,7 @@ $(".slick").slick({
 
 function init(page) {
   $("#content").load("projects/" + page.replace('#', '') + ".html", function() {
-    $(".project, #projects a").click(
+    $(".project, #projects a, .content-link").click(
     function() {
   //    $('.project').hide();
   //    $('.project-description').hide();
