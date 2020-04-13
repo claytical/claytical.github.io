@@ -43,6 +43,21 @@ function init(page) {
   });
 
 }
+var mobileMenuOpen = true;
+
+function toggleMobileMenu() {
+  if(mobileMenuOpen) {
+    $("#mobile-menu").hide();
+    $("#menu-toggle").html("Project List");
+  }
+  else {
+    $("mobile-menu").show();
+    $("#menu-toggle").html("Project List");
+
+  }
+  mobileMenuOpen = !mobileMenuOpen;
+}
+
 
 $(function() {
   if(window.location.hash != "") {
