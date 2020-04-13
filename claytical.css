@@ -25,6 +25,10 @@
       margin-right: 30px;
     }
 
+    .image-container {
+      float: right;
+      padding: 20px;
+    }
     .project .title {
       text-align: center;
       padding-top: 40px;
