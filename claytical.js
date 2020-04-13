@@ -48,11 +48,11 @@ var mobileMenuOpen = true;
 function toggleMobileMenu() {
   if(mobileMenuOpen) {
     $("#mobile-menu").hide();
-    $("#menu-toggle").html("Project List");
+    $("#menu-toggle").html("<a href='#' onClick='toggleMobileMenu();'>Project List</a>");
   }
   else {
     $("mobile-menu").show();
-    $("#menu-toggle").html("Project List");
+    $("#menu-toggle").html("<a href='#' onClick='toggleMobileMenu();'>x</a>");
 
   }
   mobileMenuOpen = !mobileMenuOpen;
