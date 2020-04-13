@@ -1,6 +1,6 @@
 
 // forcibly set domain of document (so that cross domain communication will work as expected within iframe)
-document.domain = 'unity3dusercontent.com';
+document.domain = 'claytical.com';
 
 function resizeCanvas(width, height) {
   // Unity 5.6+ starts size based on gameContainer
