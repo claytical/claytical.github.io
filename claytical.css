@@ -60,6 +60,9 @@
   #menu-toggle, #mobile-menu {
     display: none;
   }
+  #footer {
+    display: none;
+  }
 }
   
   @media only screen and (max-width: 775px) {
@@ -90,5 +93,11 @@
     #mobile-menu {
       text-align: center;
       display:none;
+    }
+    #footer {
+        display: block;
+        text-align: center;
+        padding: 20px;
+        word-spacing: 20px;
     }
 }
