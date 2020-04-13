@@ -89,5 +89,6 @@
     }
     #mobile-menu {
       text-align: center;
+      display:none;
     }
 }

@@ -43,7 +43,7 @@ function init(page) {
   });
 
 }
-var mobileMenuOpen = true;
+var mobileMenuOpen = false;
 
 function toggleMobileMenu() {
   if(mobileMenuOpen) {
@@ -51,7 +51,7 @@ function toggleMobileMenu() {
     $("#menu-toggle").html("<a href='#' onClick='toggleMobileMenu();'>Project List</a>");
   }
   else {
-    $("mobile-menu").show();
+    $("#mobile-menu").show();
     $("#menu-toggle").html("<a href='#' onClick='toggleMobileMenu();'>x</a>");
 
   }
