@@ -87,14 +87,17 @@
       display: none;
     }
 
+    .headshot {
+      display: none;
+    }
     #menu-toggle {
       font-size: 23px;
       font-weight: bold;
       position: absolute;
-      right: 50px;
+      right: 0px;
       background: #eee;
       padding: 10px;
-      top: 115px;
+      top: 0px;
     }
 
     .menu-toggle {
