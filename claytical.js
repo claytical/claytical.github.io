@@ -115,5 +115,5 @@ $("#podcasts").click(function() {
 $("#about").click(function() {
     $(".navbar-item").removeClass("is-active");
     $(this).addClass('is-active');
-    hideAndShow(".about", true);
+    hideAndShow(".about", false);
 });
