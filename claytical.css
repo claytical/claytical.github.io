@@ -1,15 +1,42 @@
     body {
-      font-family: 'Overpass', Sans-Serif;
-    }
+      font-family: 'Raleway', sans-serif;    }
 
     p {
       margin-bottom: 10px;
     }
-
-    .title, .subtitle {
-      font-family: 'Permanent Marker', Cursive;
+    a {
+      color: gray;
+    }
+    .logo {
+      font-size: 5em;
+    }
+    .title {
+      font-family: 'Shrikhand', cursive;    
+      font-weight: 100;
     }
 
+    p.title {
+      font-size: 1.1em;
+    }
+
+    .detail .content li {
+      list-style:none;
+      font-size: .9em;
+    }
+
+    .subtitle {
+      font-weight: bold;
+      height: 3em;
+      width: 100%;
+      position: relative; 
+      font-size: 1.1em;
+    }
+
+    .subtitle p {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
     .big {
       font-size: 2em;
     }
@@ -29,17 +56,16 @@
       float: right;
       padding: 0px 20px 20px 20px;
     }
+/*
     .project .title {
       text-align: center;
-      padding-top: 40px;
-      font-weight: bold;
-      font-size: 1em;
+      display:none;
     }
 
     .project-description {
       margin-bottom: 20px;
     }
-
+*/
     .fullwidth-video {
       overflow:hidden;
       padding-bottom:62.25%;
@@ -56,6 +82,18 @@
       width:100%;
       position:absolute;
     }
+
+.project {
+  opacity: .75;
+  transition: transform .5s;
+}
+
+.project:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+
 @media only screen and (min-width: 776px) {
   #mobile-project-grid {
     display:none;

@@ -13,6 +13,7 @@ function initializeGrid() {
   });
 }
 
+
 function initializeImageGalleries() {
 $(".slick").slick({
         dots: true,
@@ -61,10 +62,58 @@ function toggleMobileMenu() {
 
 $(function() {
   if(window.location.hash != "") {
-    init(window.location.hash);
+//    init(window.location.hash);
   }
   else {
-    init("hello");
+//    init("hello");
   }
 });
 
+//initializeImageGalleries();
+function hideAndShow(section, parent = false) {
+    $(".project").parent().fadeOut(100);
+    $(".detail").fadeOut(100);
+    $(".about").fadeOut(200);    
+    if(parent) {
+      $(section).parent().fadeIn(1000);
+    }
+    else {
+      $(section).fadeIn(1000);
+    }
+}
+
+$(".project").click(function() {
+  var proj = $(this).attr("href");
+  console.log("HREF: " + proj);
+  hideAndShow(proj, false);
+});
+
+$( "#games").click(function() {
+    $(".navbar-item").removeClass("is-active");
+    $(this).addClass('is-active');    
+    hideAndShow(".project.games", true);
+});
+
+$( "#apps").click(function() {
+    $(".navbar-item").removeClass("is-active");
+    $(this).addClass('is-active');
+    hideAndShow(".project.apps", true);
+});
+
+$( "#prototypes").click(function() {
+    $(".navbar-item").removeClass("is-active");
+    $(this).addClass('is-active');
+    hideAndShow(".project.prototypes", true);
+});
+
+$("#podcasts").click(function() {
+    $(".navbar-item").removeClass("is-active");
+    $(this).addClass('is-active');
+    hideAndShow(".project.podcasts", true);
+});
+
+$("#about").click(function() {
+    $(".navbar-item").removeClass("is-active");
+    $(this).addClass('is-active');
+    hideAndShow(".about", true);
+});
