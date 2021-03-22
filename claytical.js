@@ -82,7 +82,12 @@ $(".project").click(function() {
     "autoWidth": true, 
     "speed": 400,
     "controls": false,
-    "controlsPosition": "bottom"});
+    "controlsPosition": "bottom",
+    "nav": true,
+    "navAsThumbnails": true,
+    "navPosition": "bottom",
+    "autoplay": false,
+    "autoplayPosition": "bottom"});
 
 });
 
