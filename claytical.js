@@ -29,11 +29,6 @@ function init(page) {
       $('a').removeClass("is-active");
       $( "a[href='"+projectName+"']" ).addClass("is-active");
 //      $("#content").load("projects/" + projectName.replace('#','') + ".html");
-      var slider = tns(
-        {"container": '#' + projectName + ' .slider', 
-        "autoplay": true, 
-        "autoWidth": true, 
-        "speed": 400});
     });
 
   });
@@ -81,6 +76,14 @@ $(".project").click(function() {
   var proj = $(this).attr("href");
   console.log("HREF: " + proj);
   hideAndShow(proj, false);
+  var slider = tns(
+    {"container": '#' + proj + ' .slider', 
+    "autoplay": true, 
+    "autoWidth": true, 
+    "speed": 400,
+    "controls": false,
+    "controlsPosition": "bottom"});
+
 });
 
 $( "#games").click(function() {
