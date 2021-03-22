@@ -15,15 +15,6 @@ function initializeGrid() {
 
 
 function initializeImageGalleries() {
-$(".slick").slick({
-        dots: true,
-        infinite: true,
-        speed: 500,
-        fade: true,
-        cssEase: 'linear',
-        autoplay: true,
-        autoplaySpeed: 2000,       
-      });
 }
 
 function init(page) {
@@ -37,8 +28,12 @@ function init(page) {
   //    $(projectName).show();
       $('a').removeClass("is-active");
       $( "a[href='"+projectName+"']" ).addClass("is-active");
-      $("#content").load("projects/" + projectName.replace('#','') + ".html");
-
+//      $("#content").load("projects/" + projectName.replace('#','') + ".html");
+      var slider = tns(
+        {"container": '#' + projectName + ' .slider', 
+        "autoplay": true, 
+        "autoWidth": true, 
+        "speed": 400});
     });
 
   });
