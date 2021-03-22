@@ -77,7 +77,7 @@ $(".project").click(function() {
   console.log("HREF: " + proj);
   hideAndShow(proj, false);
   var slider = tns(
-    {"container": '#' + proj + ' .slider', 
+    {"container": proj + ' .slider', 
     "autoplay": true, 
     "autoWidth": true, 
     "speed": 400,
