@@ -16,24 +16,21 @@ function initializeGrid() {
 
 function initializeImageGalleries() {
 }
-
+/*
 function init(page) {
   $("#content").load("projects/" + page.replace('#', '') + ".html", function() {
     $(".project, #projects a, .content-link").click(
     function() {
-  //    $('.project').hide();
-  //    $('.project-description').hide();
-
       var projectName = $(this).attr('href');
-  //    $(projectName).show();
       $('a').removeClass("is-active");
       $( "a[href='"+projectName+"']" ).addClass("is-active");
-//      $("#content").load("projects/" + projectName.replace('#','') + ".html");
     });
 
   });
 
 }
+
+*/
 var mobileMenuOpen = false;
 
 function toggleMobileMenu() {
@@ -52,10 +49,10 @@ function toggleMobileMenu() {
 
 $(function() {
   if(window.location.hash != "") {
-//    init(window.location.hash);
+    hideAndShow(window.location.hash);
   }
   else {
-//    init("hello");
+    //landing page
   }
 });
 
@@ -70,6 +67,7 @@ function hideAndShow(section, parent = false) {
     else {
       $(section).fadeIn(1000);
     }
+    window.location.hash = section;
 }
 
 $(".project").click(function() {
