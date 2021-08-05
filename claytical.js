@@ -66,27 +66,29 @@ function hideAndShow(section, parent = false) {
     }
     else {
       $(section).fadeIn(1000);
+      window.location.hash = section;
     }
-    window.location.hash = section;
 }
 
 $(".project").click(function() {
   var proj = $(this).attr("href");
   console.log("HREF: " + proj);
   hideAndShow(proj, false);
-  var slider = tns(
-    {"container": proj + ' .slider', 
-    "autoplay": true, 
-    "autoWidth": true, 
-    "speed": 400,
-    "controls": false,
-    "controlsPosition": "bottom",
-    "nav": true,
-    "navAsThumbnails": true,
-    "navPosition": "bottom",
-    "autoplay": false,
-    "autoplayPosition": "bottom"});
-
+  if($(proj + ' .slider').length > 0) {
+    var slider = tns(
+      {"container": proj + ' .slider', 
+      "autoplay": true, 
+      "autoWidth": true, 
+      "speed": 400,
+      "controls": false,
+      "controlsPosition": "bottom",
+      "nav": true,
+      "navAsThumbnails": true,
+      "navPosition": "bottom",
+      "autoplay": false,
+      "autoplayPosition": "bottom"}); 
+  }
+ 
 });
 
 $( "#games").click(function() {
