@@ -1,2 +1,201 @@
 
-const header=document.getElementById("header");let lastPos=document.documentElement.scrollTop;window.addEventListener("scroll",(()=>{const e=document.documentElement.scrollTop;e>lastPos?e>header.offsetHeight&&(header.classList.add("-translate-y-full"),header.classList.remove("shadow-md")):(header.classList.remove("-translate-y-full"),header.classList.add("shadow-md")),lastPos=e}),!1);const menu=document.getElementById("menu"),searchBox=document.getElementById("search"),menuToggle=document.getElementById("menu-toggle");menuToggle.addEventListener("click",(()=>{menu.classList.toggle("hidden"),searchBox.classList.toggle("hidden")}),!1);const lazyImages=document.getElementsByClassName("lazy");document.addEventListener("DOMContentLoaded",(()=>{[...lazyImages].forEach((e=>{const t=e.dataset.src;e.setAttribute("src",t),e.removeAttribute("data-src")}))}),!1);const images=[],mainImage=document.getElementById("mainImage"),thumbnails=document.querySelectorAll(".thumbnail");let currentIndex=0;function updateMainImage(e){mainImage.src=thumbnails[e].src,currentIndex=e,thumbnails.forEach(((t,n)=>{t.classList.toggle("border-blue-500",n===e)}))}thumbnails.length>1&&setInterval((()=>{currentIndex=currentIndex===images.length-1?0:currentIndex+1,updateMainImage(currentIndex)}),3e3),thumbnails.forEach((e=>{e.addEventListener("click",(e=>{updateMainImage(parseInt(e.target.getAttribute("data-index"),10))}))}));class SearchPosts{async init(){const e=new URL(location.href).searchParams;this.start=Number(e.get("start"))||1,this.size=Number(e.get("size"))||12,this.posts=await fetch("../index.json").then((e=>e.json())),this.render(e.get("q"))}render(e){const t=document.getElementById("wrapper"),n=document.getElementById("searchbox"),s=document.getElementById("info");if(e="string"==typeof e?e.toLowerCase():"",history.replaceState(null,null,`?q=${e}&start=${this.start}&size=${this.size}`),n.value=e,t.innerHTML="",""===e)return void(s.textContent="Enter keywords in the search box above");const a=this.posts.filter((t=>-1!==t.title.toLowerCase().indexOf(e)));if(0===a.length)return void(s.textContent=`No results were found for "${e}"`);const r=this.size,o=this.start-1,l=a.slice(o,o+r),d=o+l.length,i=this.start<d||1!==this.start?`${this.start} to ${d}`:this.start,c=a.length>1?"s":"";s.textContent=`Showing ${i} of ${a.length} result${c} found for "${e}"`,l.forEach((e=>{const{url:n,title:s,date:a}=e;t.innerHTML+=`\n        <div class="w-full sm:w-1/2 md:w-1/3 self-stretch p-2 mb-2">\n          <a href="${n}">\n            <div class="rounded shadow-md h-full px-6 py-5">\n              <div class="font-semibold text-lg mb-2">${s}</div>\n              <p class="text-gray-700 mb-1" title="Published date">${a}</p>\n            </div>\n          </a>\n        </div>\n      `}))}}if("/search/"===location.pathname){const e=document.getElementById("searchbox"),t=new SearchPosts;t.init(),e.addEventListener("keyup",debounce((function(){t.render(this.value)}),400))}function debounce(e,t){let n,s=[];return function(...a){return new Promise((r=>{clearTimeout(n),n=setTimeout((()=>{n=null;const t=e.apply(this,a);for(r of s)r(t);s=[]}),t),s.push(r)}))}}
+
+/*
+Hide header on scroll down & show on scroll up
+*/
+
+const header = document.getElementById('header');
+let lastPos = document.documentElement.scrollTop;
+
+window.addEventListener('scroll', () => {
+  const currPos = document.documentElement.scrollTop;
+
+  if (currPos > lastPos) {
+    if (currPos > header.offsetHeight) {
+      header.classList.add('-translate-y-full');
+      header.classList.remove('shadow-md');
+    }
+  } else {
+    header.classList.remove('-translate-y-full');
+    header.classList.add('shadow-md');
+  }
+
+  lastPos = currPos;
+}, false);
+
+/*
+Toggle the menu when pressed on hamburger button
+Only on mobile devices
+*/
+
+const menu = document.getElementById('menu');
+const searchBox = document.getElementById('search');
+const menuToggle = document.getElementById('menu-toggle');
+
+menuToggle.addEventListener('click', () => {
+  menu.classList.toggle('hidden');
+  searchBox.classList.toggle('hidden');
+}, false);
+
+/*
+Lazy load images
+*/
+
+const lazyImages = document.getElementsByClassName('lazy');
+
+document.addEventListener('DOMContentLoaded', () => {
+  [...lazyImages].forEach((elem) => {
+    const originalImage = elem.dataset.src;
+
+    elem.setAttribute('src', originalImage);
+    elem.removeAttribute('data-src');
+  });
+}, false);
+
+  // Define the images array in JavaScript using a template loop
+  const images = [
+    
+  ];
+  
+  const mainImage = document.getElementById('mainImage');
+  const thumbnails = document.querySelectorAll('.thumbnail');
+  let currentIndex = 0;
+
+  function updateMainImage(index) {
+    mainImage.src = thumbnails[index].src;
+    currentIndex = index;
+
+    // Highlight the selected thumbnail
+    thumbnails.forEach((thumb, i) => {
+      thumb.classList.toggle('border-blue-500', i === index);
+    });
+  }
+  if(thumbnails.length > 1) {
+    // Auto-slide logic
+    setInterval(() => {
+      currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+      updateMainImage(currentIndex);
+    }, 3000);
+
+  }
+
+  // Add click event to thumbnails
+  thumbnails.forEach((thumbnail) => {
+    thumbnail.addEventListener('click', (e) => {
+      const index = parseInt(e.target.getAttribute('data-index'), 10);
+      updateMainImage(index);
+    });
+  });
+/*
+Search for posts with keyword given in the parameter "q"
+Only run on search page ("/search/")
+*/
+
+class SearchPosts {
+  async init() {
+    const params = new URL(location.href).searchParams;
+
+    this.start = Number(params.get('start')) || 1;
+    this.size = Number(params.get('size')) || 12;
+
+    this.posts = await fetch('../index.json').then((res) => {
+      return res.json();
+    });
+
+    this.render(params.get('q'));
+  }
+
+  render(query) {
+    const wrapperEl = document.getElementById('wrapper');
+    const searchBoxEl = document.getElementById('searchbox');
+    const infoEl = document.getElementById('info');
+
+    query = typeof query === 'string' ? query.toLowerCase() : '';
+
+    history.replaceState(null, null, `?q=${query}&start=${this.start}&size=${this.size}`);
+
+    searchBoxEl.value = query;
+    wrapperEl.innerHTML = '';
+
+    if (query === '') {
+      infoEl.textContent = 'Enter keywords in the search box above';
+
+      return;
+    }
+
+    const matchedPosts = this.posts.filter((post) => {
+      const postTitle = post.title.toLowerCase();
+
+      return postTitle.indexOf(query) !== -1;
+    });
+
+    if (matchedPosts.length === 0) {
+      infoEl.textContent = `No results were found for "${query}"`;
+
+      return;
+    }
+
+    const size = this.size;
+    const offset = this.start - 1;
+    const slicedPosts = matchedPosts.slice(offset, offset + size);
+
+    const lastPostIndex = offset + slicedPosts.length;
+    const showingRange = this.start < lastPostIndex || this.start !== 1 ? `${this.start} to ${lastPostIndex}` : this.start;
+    const extraS = matchedPosts.length > 1 ? 's' : '';
+
+    infoEl.textContent = `Showing ${showingRange} of ${matchedPosts.length} result${extraS} found for "${query}"`;
+
+    slicedPosts.forEach((post) => {
+      const { url, title, date } = post;
+
+      wrapperEl.innerHTML += `
+        <div class="w-full sm:w-1/2 md:w-1/3 self-stretch p-2 mb-2">
+          <a href="${url}">
+            <div class="rounded shadow-md h-full px-6 py-5">
+              <div class="font-semibold text-lg mb-2">${title}</div>
+              <p class="text-gray-700 mb-1" title="Published date">${date}</p>
+            </div>
+          </a>
+        </div>
+      `;
+    });
+  }
+}
+
+if (location.pathname === '/search/') {
+  const searchBoxEl = document.getElementById('searchbox');
+  const searchPosts = new SearchPosts();
+
+  searchPosts.init();
+
+  searchBoxEl.addEventListener('keyup', debounce(function() {
+    searchPosts.render(this.value);
+  }, 400));
+}
+
+// https://github.com/sindresorhus/p-debounce
+function debounce(fn, wait) {
+  let timer;
+  let resolveList = [];
+
+  return function(...arguments_) {
+    return new Promise((resolve) => {
+      clearTimeout(timer);
+
+      timer = setTimeout(() => {
+        timer = null;
+
+        const result = fn.apply(this, arguments_);
+
+        for (resolve of resolveList) {
+          resolve(result);
+        }
+
+        resolveList = [];
+      }, wait);
+
+      resolveList.push(resolve);
+    });
+  };
+}
+
